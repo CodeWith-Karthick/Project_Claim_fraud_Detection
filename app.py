@@ -136,7 +136,7 @@ except Exception as e:
     logging.error(f"🔴 WARNING: Could not load model. Batch processing will fail. Error: {e}")
 
 # --- Groq API Config ---
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 # --- Routes ---
