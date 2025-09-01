@@ -136,7 +136,7 @@ except Exception as e:
     logging.error(f"🔴 WARNING: Could not load model. Batch processing will fail. Error: {e}")
 
 # --- Groq API Config ---
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 # --- Routes ---
@@ -441,7 +441,7 @@ def groq_explain():
     measure to prevent it,and need a well defined report and more details with 30 to 40 lines,and avoid * this symbol.
         """
         payload = {
-            "model": "llama3-8b-8192",
+            "model": "llama-3.1-8b-instant",
             "messages": [
                 {"role": "system", "content": "You are a fraud analyst."},
                 {"role": "user", "content": prompt}
@@ -556,7 +556,7 @@ def get_groq_explanation(features, risk_level, fraud_probability, potential_savi
                 "Content-Type": "application/json"
             },
             json={
-                "model": "llama3-8b-8192",
+                "model": "llama-3.1-8b-instant",
                 "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 200,
                 "temperature": 0.7
@@ -619,7 +619,7 @@ def claim_groq_summary():
     measure to prevent it,and need a well defined report and more details with 30 to 40 lines,and avoid * this symbol.
         """
         payload = {
-            "model": "llama3-8b-8192",
+            "model": "llama-3.1-8b-instant",
             "messages": [
                 {"role": "system", "content": "You are a Medicare fraud analyst."},
                 {"role": "user", "content": prompt}
@@ -651,7 +651,7 @@ def groq_explain_summary():
     measure to prevent it,and need a well defined report and more details with 30 to 40 lines,and avoid * this symbol.
         """
         payload = {
-            "model": "llama3-8b-8192",
+            "model": "llama-3.1-8b-instant",
             "messages": [
                 {"role": "system", "content": "You are a fraud detection analyst."},
                 {"role": "user", "content": prompt}
@@ -683,7 +683,7 @@ def claim_groq_explain():
     measure to prevent it,and need a well defined report and more details with 30 to 40 lines,and avoid * this symbol.
         """
         payload = {
-            "model": "llama3-8b-8192",
+            "model": "llama-3.1-8b-instant",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.3,
             "max_tokens": 200
@@ -731,7 +731,7 @@ def get_groq_explanation_for_claim(input_data, prediction):
                 "Content-Type": "application/json"
             },
             json={
-                "model": "llama3-8b-8192",
+                "model": "llama-3.1-8b-instant",
                 "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 200,
                 "temperature": 0.5
